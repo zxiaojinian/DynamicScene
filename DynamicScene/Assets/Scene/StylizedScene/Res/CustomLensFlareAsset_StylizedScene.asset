@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961c074fb4942414cb5af94241f053b3, type: 3}
+  m_Name: CustomLensFlareAsset_StylizedScene
+  m_EditorClassIdentifier: 
+  FlareAtlasTexture: {fileID: 2800000, guid: 863e0428fa4228044874fb615c9e5980, type: 3}
+  FlareTexLayout: 2
+  FlareDatas:
+  - AutoRotation: 1
+    Rotation: 0
+    AtlasIndex: 4
+    FlareScale: 0.13
+    FlareOffset: -0.3
+    OcclusionScale: 0.5
+    FlareColor: {r: 0.184, g: 0.184, b: 0.184, a: 1}
+  - AutoRotation: 1
+    Rotation: 0
+    AtlasIndex: 4
+    FlareScale: 0.178
+    FlareOffset: 0.02
+    OcclusionScale: 0.5
+    FlareColor: {r: 0.206, g: 0.206, b: 0.206, a: 1}
+  - AutoRotation: 1
+    Rotation: 0
+    AtlasIndex: 4
+    FlareScale: 0.369
+    FlareOffset: 0.54
+    OcclusionScale: 0.5
+    FlareColor: {r: 0.093, g: 0.093, b: 0.093, a: 1}
+  - AutoRotation: 0
+    Rotation: 0
+    AtlasIndex: 0
+    FlareScale: 1.87
+    FlareOffset: 2
+    OcclusionScale: 0.5
+    FlareColor: {r: 0.113000005, g: 0.113000005, b: 0.113000005, a: 1}
