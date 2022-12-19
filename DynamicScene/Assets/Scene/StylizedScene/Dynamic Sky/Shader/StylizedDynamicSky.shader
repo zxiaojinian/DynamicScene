@@ -97,7 +97,6 @@ Shader "Code Repository/Scene/Stylized Dynamic Sky"
 			struct Varyings 
 			{
 				float4 positionCS : SV_POSITION;
-				//float3 positionWS : TEXCOORD0;
 				float3 viewDirWS : TEXCOORD0;
 				float4 sunAndMoonUV : TEXCOORD1;
 				float3 positionOS : TEXCOORD3;
@@ -106,14 +105,8 @@ Shader "Code Repository/Scene/Stylized Dynamic Sky"
 			Varyings Vertex(Attributes IN) 
 			{
 				Varyings OUT;
-				OUT.positionCS = TransformObjectToHClip(IN.positionOS.xyz);
-				//#if UNITY_REVERSED_Z
-				//	OUT.positionCS.z = 0.000001 * OUT.positionCS.w;
-				//#else
-				//	OUT.positionCS.z = 0.999999 * OUT.positionCS.w;
-				//#endif			
-				float3 positionWS = TransformObjectToWorld(IN.positionOS.xyz);
-				//OUT.positionWS = positionWS;			
+				OUT.positionCS = TransformObjectToHClip(IN.positionOS.xyz);		
+				float3 positionWS = TransformObjectToWorld(IN.positionOS.xyz);		
 				OUT.viewDirWS = positionWS - _WorldSpaceCameraPos.xyz;
 				float3 posInLight = mul((float3x3)_LightMatrix, normalize(OUT.viewDirWS));
 				OUT.sunAndMoonUV.xy = (posInLight * _SunSize).xy;
@@ -124,7 +117,6 @@ Shader "Code Repository/Scene/Stylized Dynamic Sky"
 
 			half4 Fragment(Varyings IN) : SV_Target 
 			{
-				//float3 viewDirWS = normalize(IN.positionWS - _WorldSpaceCameraPos.xyz);
 				float3 viewDirWS = normalize(IN.viewDirWS);
 				float skyHeight = saturate(viewDirWS.y);
 				half middleHeight = _MiddleHeight + 0.0001;
