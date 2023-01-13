@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d36d8f5d5862f46a90fd0ec4a09615, type: 3}
+  m_Name: SampleScene_HeightData
+  m_EditorClassIdentifier: 
+  HeightMap: {fileID: 2800000, guid: 67acdc585f5f65348a88e22dfba5d27d, type: 2}
+  Offset: {x: -234.09412, y: -19.803442, z: -191.27957}
+  Size: {x: 500, y: 60, z: 400}

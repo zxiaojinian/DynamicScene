@@ -13,6 +13,21 @@ MonoBehaviour:
   m_Name: PostFXPassFeature
   m_EditorClassIdentifier: 
   m_Active: 1
+--- !u!114 &-5854859197218351092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5914904459c36948b7c5a0f37215f9c, type: 3}
+  m_Name: RainFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  RainPostProcessingMesh: {fileID: 3331419807370966542, guid: 9b19e188fc39125418f429933ef5b114, type: 3}
+  RainSplashMesh: {fileID: 1698299227701109266, guid: 500f2bc5d26489848a2796926f39a1aa, type: 3}
 --- !u!114 &-4205172354079780217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,8 +58,9 @@ MonoBehaviour:
   m_Name: UniversalRenderPipelineAsset_Renderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: 4785550032252094201}
-  m_RendererFeatureMap: f9c63e3f66b06942
+  - {fileID: 7065389282625902448}
+  - {fileID: -5854859197218351092}
+  m_RendererFeatureMap: 70d7c4561e4e0d620c18df9b945cbfae
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
@@ -86,7 +102,7 @@ MonoBehaviour:
   m_Name: GlobalFogFeature
   m_EditorClassIdentifier: 
   m_Active: 1
---- !u!114 &4785550032252094201
+--- !u!114 &7065389282625902448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -34,8 +34,8 @@ half2 SingleRipple(float2 uv, half time, half weight)
    half4 ripple = SAMPLE_TEXTURE2D(_RippleTexture, sampler_RippleTexture, uv);
    ripple.gb = ripple.gb * 2 - 1; //0-1>>-1-1
    half dropFrac = frac(ripple.a + time); //0-1循环
-   half timeFrac = dropFrac - 1.0 + ripple.r; //0-1循环,sin参数
-   half dropFactor = saturate(0.2 + weight * 0.8 - dropFrac); //最低0.2,随时间衰减
+   half timeFrac = dropFrac - 1.0 + ripple.r; //sin参数
+   half dropFactor = saturate(0.2 + weight * 0.8 - dropFrac); //随时间衰减
    half finalFactor = dropFactor * ripple.r * sin( clamp(timeFrac * 9.0, 0.0f, 3.0) * PI);
    return ripple.gb * finalFactor * 0.35;    
 }
@@ -117,9 +117,14 @@ void DoWetProcess(inout half3 diffuse, inout half gloss, half wetLevel)
    gloss = min(gloss * lerp(1.0, 2.5, wetLevel), 1.0);
 }
 
-half PuddleWater(half mask)
+half PuddleWaterGlobal(half puddleDepth, half edgeWidth)
 {
-    return saturate((_FloodLevel.y - mask) / 0.4);
+    return saturate((_FloodLevel.y - puddleDepth) / edgeWidth);
+}
+
+half PuddleWaterSingle(half puddleDepth, half edgeWidth, half puddleLevel)
+{
+    return saturate((puddleLevel - puddleDepth) / edgeWidth);
 }
 
 void GroundWet(inout half3 diffuse, inout half3 specular, inout half gloss, inout float3 normalWS, WetData wetdata)
@@ -141,7 +146,7 @@ void GroundWet(inout half3 diffuse, inout half3 specular, inout half gloss, inou
     half3 upNormal= half3(0.0, 1.0, 0.0);
     half NdotUP = saturate(dot(normalWS, upNormal));
     half accumulatedWater_hole = min(_FloodLevel.x, 1.0 - height) * occlusion * smoothstep(0.95, 1.0, NdotUP); //缝隙内积水
-    half accumulatedWater_puddle = PuddleWater(mask.g);//水坑内积水
+    half accumulatedWater_puddle = PuddleWaterGlobal(mask.g, 0.4);//水坑内积水
     accumulatedWater  = max(accumulatedWater_hole, accumulatedWater_puddle);
     DoWetProcess(diffuse, gloss, saturate(_WetLevel * occlusion + accumulatedWater));
     gloss = lerp(gloss, 1.0, accumulatedWater);

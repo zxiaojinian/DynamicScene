@@ -104,7 +104,7 @@ Material:
     - _CloudFillMax: 0
     - _CloudFillMin: -0.5
     - _CloudHorizonSoft: 0.3
-    - _CloudLightIntensity: 0.9983031
+    - _CloudLightIntensity: 0.99339396
     - _CloudLightRadius: 1
     - _CloudLightRadiusIntensity: 1
     - _CloudLightRadiusStr: 1
@@ -115,7 +115,7 @@ Material:
     - _CloudRimEdgeNearSun: 0.214
     - _CloudRimEdgeSoft: 0.3
     - _CloudSSSIntensity: 1
-    - _CloudSSSRadius: 0.09658168
+    - _CloudSSSRadius: 0.1
     - _CloudSSSStr: 2
     - _CloudSize: 1
     - _CloudSpeed: 1
@@ -145,10 +145,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CloudColor: {r: 0.273065, g: 0.6493224, b: 0.88150024, a: 1}
-    - _CloudLightColor: {r: 2.3245595, g: 1.7171628, b: 0.99787754, a: 1}
+    - _CloudColor: {r: 0.33333334, g: 0.7372549, b: 0.99215686, a: 1}
+    - _CloudLightColor: {r: 2, g: 2, b: 2, a: 1}
     - _CloudLightColor_NearSun: {r: 3.91623, g: 3.9999995, b: 3.5183241, a: 1}
-    - _CloudRimColor: {r: 1.6081488, g: 1.3255824, b: 0.71431625, a: 1}
+    - _CloudRimColor: {r: 1.4142135, g: 1.4142135, b: 1.4142135, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

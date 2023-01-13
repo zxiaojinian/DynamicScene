@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 9eb547cf68a5f1a42b02196e2bc90505
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RainShader: {fileID: 4800000, guid: 5b3acf381703e1c48b6d4111dd522a82, type: 3}
+  - RainShapeTexture: {fileID: 2800000, guid: c984d4eb3cf897544aec2b9cd2fcdf83, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
